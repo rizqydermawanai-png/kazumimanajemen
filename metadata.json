@@ -1,0 +1,7 @@
+{
+  "name": "RD KAZUMI MANAJEMEN",
+  "description": "Aplikasi web modern untuk menghitung HPP, mengelola penjualan, inventaris, dan membuat laporan komprehensif untuk bisnis pakaian Anda. Dibangun dengan React dan Tailwind CSS.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

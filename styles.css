@@ -1,0 +1,64 @@
+
+
+/* Set the base font for the entire application */
+body {
+  font-family: 'Inter', sans-serif;
+  /* ADD a subtle, modern background */
+  background-color: #f8fafc; /* slate-50 */
+  background-image: radial-gradient(circle at top left, rgba(79, 70, 229, 0.05), transparent 30%),
+                    radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.05), transparent 40%);
+}
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}
+
+/* Remove spin buttons from number inputs for a cleaner UI */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Custom dropdown arrow for select elements */
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+
+/* FIX: Override browser autofill styles to prevent white text on light backgrounds */
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0f172a !important; /* slate-900 */
+  box-shadow: 0 0 0px 1000px #f8fafc inset; /* slate-50, same as input bg */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*
+  The @media print block has been removed.
+  Printing logic is now handled robustly via a hidden iframe created in App.tsx.
+  This new method injects styles directly into the iframe, ensuring a clean and
+  conflict-free printing context without needing global print stylesheet overrides.
+*/
